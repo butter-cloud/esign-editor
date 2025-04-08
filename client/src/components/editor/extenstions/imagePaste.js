@@ -20,7 +20,8 @@ const ImagePaste = Extension.create({
                   const node = this.editor.schema.nodes.image.create({
                     src: reader.result,
                   })
-                  const transaction = this.editor.state.tr.replaceSelectionWith(node)
+                  const transaction =
+                    this.editor.state.tr.replaceSelectionWith(node)
                   view.dispatch(transaction)
                 }
                 if (file) reader.readAsDataURL(file)

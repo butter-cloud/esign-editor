@@ -1,5 +1,5 @@
-import {useCurrentEditor} from "@tiptap/react";
-import React from "react";
+import { useCurrentEditor } from '@tiptap/react'
+import React from 'react'
 
 export const MenuBar = () => {
   const { editor } = useCurrentEditor()
