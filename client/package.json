@@ -21,12 +21,10 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-prettier": "^5.2.6",
-    "prettier": "^3.5.3",
-    "tailwindcss": "^4"
+    "prettier": "^3.5.3"
   }
 }
