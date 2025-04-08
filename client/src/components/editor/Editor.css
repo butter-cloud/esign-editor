@@ -90,15 +90,27 @@
 
 table {
   border-collapse: collapse;
-  width: 100%;
 }
 
 th, td {
   border: 1px solid #ccc;
   padding: 8px;
   text-align: left;
+
+  position: relative;
 }
 
 thead {
   background-color: #f5f5f5;
+}
+
+td::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  cursor: col-resize;
+  background-color: transparent;
 }

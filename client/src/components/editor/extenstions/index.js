@@ -18,6 +18,9 @@ export const extensions = [
   CustomPasteHandler,
   Table.configure({
     resizable: true,
+    HTMLAttributes: {
+      class: 'my-table',
+    },
   }),
   TableRow,
   TableCell,
