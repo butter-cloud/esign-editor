@@ -1,28 +1,11 @@
 'use client'
 
-import '../styles.css'
-import { Color } from '@tiptap/extension-color'
-import ListItem from '@tiptap/extension-list-item'
-import TextStyle from '@tiptap/extension-text-style'
+import './Editor.css'
 import { EditorProvider } from '@tiptap/react'
-import StarterKit from '@tiptap/starter-kit'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import MenuBar from '@/components/menubar/MenuBar'
-
-const extensions = [
-  Color.configure({ types: [TextStyle.name, ListItem.name] }),
-  TextStyle.configure({ types: [ListItem.name] }),
-  StarterKit.configure({
-    bulletList: {
-      keepMarks: true,
-      keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
-    },
-    orderedList: {
-      keepMarks: true,
-      keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
-    },
-  }),
-]
+import SaveButton from '@/components/editor/SaveButton'
+import extensions from '@/components/editor/extenstions'
 
 const defaultContent = `
 <h2>
@@ -59,12 +42,16 @@ export const Editor = () => {
   const [content, setContent] = useState(defaultContent)
 
   return (
-    <EditorProvider
-      slotBefore={<MenuBar />}
-      extensions={extensions}
-      content={content}
-      immediatelyRender={false}
-    ></EditorProvider>
+    <>
+      <EditorProvider
+        slotBefore={<MenuBar />}
+        extensions={extensions}
+        content={content}
+        immediatelyRender={false}
+      >
+        <SaveButton />
+      </EditorProvider>
+    </>
   )
 }
 
